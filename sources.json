@@ -1,0 +1,36 @@
+[
+  { "id": "dn-air", "name": "Defense News (Air)", "url": "https://www.defensenews.com/arc/outboundfeeds/rss/category/air/?outputType=xml", "category": "Aerospace", "enabled": true },
+  { "id": "flight-global", "name": "Flight Global", "url": "https://www.flightglobal.com/rss/defence", "category": "Aerospace", "enabled": true },
+  
+  { "id": "army-tech", "name": "Army Technology", "url": "https://www.army-technology.com/feed/", "category": "Land Warfare", "enabled": true },
+  { "id": "janes-land", "name": "Janes Land", "url": "https://www.janes.com/feeds/news/land", "category": "Land Warfare", "enabled": true },
+
+  { "id": "naval-news", "name": "Naval News", "url": "https://www.navalnews.com/feed/", "category": "Naval", "enabled": true },
+  { "id": "usni", "name": "USNI News", "url": "https://news.usni.org/feed", "category": "Naval", "enabled": true },
+
+  { "id": "c4isr", "name": "C4ISRNET", "url": "https://www.c4isrnet.com/arc/outboundfeeds/rss/?outputType=xml", "category": "Cyber", "enabled": true },
+  { "id": "dark-reading", "name": "Dark Reading", "url": "https://www.darkreading.com/rss.xml", "category": "Cyber", "enabled": true },
+
+  { "id": "space-news", "name": "Space News", "url": "https://spacenews.com/feed/", "category": "Space", "enabled": true },
+  { "id": "breaking-space", "name": "Breaking Defense (Space)", "url": "https://breakingdefense.com/tag/space/feed/", "category": "Space", "enabled": true },
+
+  { "id": "missile-threat", "name": "Missile Threat", "url": "https://missilethreat.csis.org/feed/", "category": "Missiles", "enabled": true },
+
+  { "id": "drone-dj", "name": "DroneDJ (Mil)", "url": "https://dronedj.com/guides/military/feed/", "category": "Drones", "enabled": true },
+
+  { "id": "geopol-monitor", "name": "Geopolitical Monitor", "url": "https://www.geopoliticalmonitor.com/feed/", "category": "Geopolitics", "enabled": true },
+
+  { "id": "def-ind-daily", "name": "Def Industry Daily", "url": "https://www.defenseindustrydaily.com/feed/", "category": "Industry", "enabled": true },
+
+  { "id": "nuke-info", "name": "Nuke Info Service", "url": "https://www.nukewatch.org/feed/", "category": "Nuclear", "enabled": true },
+
+  { "id": "def-logistics", "name": "Defense Logistics", "url": "https://www.dla.mil/RSS/News/", "category": "Logistics", "enabled": true },
+
+  { "id": "soc-mil", "name": "SOF News", "url": "https://sof.news/feed/", "category": "Special Ops", "enabled": true },
+
+  { "id": "warontherocks", "name": "War on the Rocks", "url": "https://warontherocks.com/feed/", "category": "Policy", "enabled": true },
+
+  { "id": "nato-news", "name": "NATO News", "url": "https://www.nato.int/cps/en/natohq/news.rss", "category": "NATO", "enabled": true },
+
+  { "id": "diplomat-apac", "name": "The Diplomat", "url": "https://thediplomat.com/feed/", "category": "Indo-Pacific", "enabled": true }
+]
