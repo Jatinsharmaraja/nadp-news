@@ -26,7 +26,7 @@
             --card-bg: rgba(18, 18, 18, 0.95); 
             --card-border: rgba(255, 240, 160, 0.1);
             --text-main: #ffffff;
-            --text-dim: #dddddd; /* Much brighter gray for easy reading */
+            --text-dim: #e0e0e0; /* Almost white for maximum readability */
             --nav-bg: rgba(5, 5, 5, 0.95);
             --grid-color: rgba(255, 255, 255, 0.03);
             --shadow-soft: 0 15px 50px rgba(0,0,0,0.9);
@@ -39,7 +39,7 @@
             --card-bg: rgba(255, 255, 255, 0.98);
             --card-border: rgba(238, 187, 77, 0.5);
             --text-main: #000000;
-            --text-dim: #222222; /* Darker text for light mode */
+            --text-dim: #111111; /* Dark text for light mode */
             --nav-bg: rgba(255, 255, 255, 0.98);
             --grid-color: rgba(0, 0, 0, 0.04);
             --shadow-soft: 0 15px 40px rgba(0,0,0,0.1);
@@ -53,7 +53,8 @@
             --font-tech: 'Share Tech Mono', monospace;
         }
 
-        * { box-sizing: border-box; cursor: none; user-select: none; outline: none; }
+        /* REMOVED: cursor: none. Now using system cursor for better usability */
+        * { box-sizing: border-box; outline: none; }
         html { font-size: var(--base-font-size); -webkit-font-smoothing: antialiased; }
 
         body {
@@ -85,14 +86,14 @@
         }
         @keyframes loadBar { 100% { transform: translateX(0); } }
         
-        /* --- 3. BACKGROUND MESH (Cleaned Up) --- */
+        /* --- 3. BACKGROUND MESH --- */
         #hex-grid {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: 
                 linear-gradient(var(--grid-color) 1px, transparent 1px),
                 linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-            background-size: 60px 60px; /* Larger grid for cleaner look */
-            z-index: -3; pointer-events: none; opacity: 0.3; /* Lower opacity for subtlety */
+            background-size: 60px 60px; 
+            z-index: -3; pointer-events: none; opacity: 0.3; 
             transition: background-image var(--transition-speed);
         }
 
@@ -118,7 +119,7 @@
             box-shadow: var(--shadow-soft);
         }
 
-        .brand-box { display: flex; align-items: center; gap: 25px; }
+        .brand-box { display: flex; align-items: center; gap: 25px; cursor: pointer; }
         
         /* Stylized Logo */
         .logo-svg { width: 65px; height: 65px; filter: drop-shadow(0 0 10px var(--gold-glow)); }
@@ -143,7 +144,7 @@
         .func-btn {
             background: rgba(255,255,255,0.03); border: 1px solid var(--card-border);
             color: var(--text-dim); padding: 0; border-radius: 4px;
-            font-family: var(--font-tech); cursor: none; transition: 0.3s;
+            font-family: var(--font-tech); cursor: pointer; transition: 0.3s;
             display: flex; align-items: center; justify-content: center;
             width: 40px; height: 40px; font-weight: bold; font-size: 1.1rem;
         }
@@ -151,10 +152,10 @@
         .func-btn.active { background: var(--gold-glow); color: #000; border-color: var(--gold-main); }
 
         /* THEME TOGGLE */
-        .theme-switch-wrapper { display: flex; align-items: center; gap: 8px; font-family: var(--font-tech); font-size: 0.75rem; color: var(--text-dim); border: 1px solid var(--card-border); padding: 5px 10px; border-radius: 20px; }
+        .theme-switch-wrapper { display: flex; align-items: center; gap: 8px; font-family: var(--font-tech); font-size: 0.75rem; color: var(--text-dim); border: 1px solid var(--card-border); padding: 5px 10px; border-radius: 20px; cursor: pointer; }
         .theme-switch { position: relative; display: inline-block; width: 36px; height: 18px; }
         .theme-switch input { opacity: 0; width: 0; height: 0; }
-        .slider { position: absolute; cursor: none; top: 0; left: 0; right: 0; bottom: 0; background-color: #333; transition: .4s; border-radius: 20px; border: 1px solid #555; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #333; transition: .4s; border-radius: 20px; border: 1px solid #555; }
         .slider:before { position: absolute; content: ""; height: 12px; width: 12px; left: 3px; bottom: 2px; background-color: var(--gold-main); transition: .4s; border-radius: 50%; box-shadow: 0 0 8px var(--gold-neon); }
         input:checked + .slider { background-color: #ddd; }
         input:checked + .slider:before { transform: translateX(18px); background-color: #333; }
@@ -172,11 +173,11 @@
             clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
             box-shadow: 10px 0 30px rgba(238, 187, 77, 0.4); z-index: 2; font-size: 0.95rem; letter-spacing: 1px;
         }
-        .ticker { display: inline-block; white-space: nowrap; animation: ticker 120s linear infinite; padding-left: 100%; }
+        .ticker { display: inline-block; white-space: nowrap; animation: ticker 90s linear infinite; padding-left: 100%; }
         .ticker:hover { animation-play-state: paused; }
         .ticker-item {
             color: #fff; font-family: var(--font-body); font-weight: 500; font-size: 1rem; margin: 0 50px;
-            display: inline-flex; align-items: center; gap: 10px;
+            display: inline-flex; align-items: center; gap: 10px; cursor: pointer;
         }
         .ticker-dot { width: 6px; height: 6px; background: var(--gold-neon); border-radius: 50%; box-shadow: 0 0 5px var(--gold-neon); }
         @keyframes ticker { 100% { transform: translate3d(-100%, 0, 0); } }
@@ -209,7 +210,7 @@
             background: rgba(30,30,30,0.7);
             border: 1px solid var(--card-border); color: var(--text-dim); padding: 12px 22px; 
             font-family: var(--font-tech); font-size: 0.9rem; font-weight: bold;
-            transition: 0.2s; position: relative; overflow: hidden; cursor: none;
+            transition: 0.2s; position: relative; overflow: hidden; cursor: pointer;
             backdrop-filter: blur(10px);
         }
         [data-theme="light"] .filter-btn { background: rgba(255,255,255,0.7); color: #333; border-color: #bbb; }
@@ -240,6 +241,7 @@
             overflow: hidden; border-radius: 4px;
             transform-style: preserve-3d;
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            cursor: pointer;
         }
         
         .grid.list-view .card {
@@ -303,73 +305,78 @@
         .access-btn { 
             color: var(--gold-main); font-weight: bold; border: 1px solid var(--gold-glow); 
             padding: 6px 18px; transition: 0.3s; font-size: 0.8rem; letter-spacing: 2px;
-            background: rgba(238, 187, 77, 0.05);
+            background: rgba(238, 187, 77, 0.05); cursor: pointer;
         }
         .card:hover .access-btn { 
             background: var(--gold-main); color: #000; box-shadow: 0 0 20px var(--gold-glow); border-color: #fff;
         }
 
-        /* --- 8. NEW: FOCUS INTEL MODAL --- */
+        /* --- 8. IMPROVED MODAL (Readability Focus) --- */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--modal-overlay); backdrop-filter: blur(10px);
+            background: var(--modal-overlay); backdrop-filter: blur(15px);
             z-index: 10000; display: none; justify-content: center; align-items: center;
             opacity: 0; transition: opacity 0.3s;
         }
         .modal-overlay.active { display: flex; opacity: 1; }
         
         .modal-card {
-            width: 90%; max-width: 700px; background: var(--bg-deep);
-            border: 2px solid var(--gold-main); padding: 3rem;
-            position: relative; box-shadow: 0 0 60px rgba(238,187,77,0.3);
+            width: 90%; max-width: 700px; 
+            background: rgba(10,10,10,0.95); /* Nearly solid for readability */
+            border: 1px solid var(--gold-main); padding: 3rem;
+            position: relative; box-shadow: 0 0 80px rgba(0,0,0,0.8);
             transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            color: #fff;
         }
+        [data-theme="light"] .modal-card { background: #fff; color: #111; border-color: #ccc; }
+
         .modal-overlay.active .modal-card { transform: scale(1); }
         
-        .modal-corner { position: absolute; width: 30px; height: 30px; border: 4px solid var(--gold-neon); }
+        /* Modal Decorations */
+        .modal-corner { position: absolute; width: 30px; height: 30px; border: 4px solid var(--gold-neon); pointer-events: none; }
         .mc-tl { top: -2px; left: -2px; border-right: 0; border-bottom: 0; }
         .mc-tr { top: -2px; right: -2px; border-left: 0; border-bottom: 0; }
         .mc-bl { bottom: -2px; left: -2px; border-right: 0; border-top: 0; }
         .mc-br { bottom: -2px; right: -2px; border-left: 0; border-top: 0; }
 
         .modal-close {
-            position: absolute; top: 20px; right: 20px; color: var(--text-dim); font-size: 1.5rem;
-            cursor: none; transition: 0.3s; font-family: sans-serif;
+            position: absolute; top: 15px; right: 20px; color: #888; font-size: 2rem;
+            cursor: pointer; transition: 0.3s; font-family: sans-serif; line-height: 1;
         }
         .modal-close:hover { color: var(--gold-neon); text-shadow: 0 0 10px var(--gold-neon); }
 
-        .modal-title { font-family: var(--font-head); font-size: 2rem; color: var(--gold-main); margin-bottom: 1.5rem; line-height: 1.2; }
-        .modal-meta { font-family: var(--font-tech); color: var(--gold-neon); margin-bottom: 2rem; display: flex; gap: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        .modal-body { font-size: 1.2rem; line-height: 1.8; color: var(--text-main); margin-bottom: 3rem; }
+        .modal-title { 
+            font-family: var(--font-head); font-size: 2rem; color: var(--gold-main); 
+            margin-bottom: 1.5rem; line-height: 1.3; text-transform: uppercase; letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;
+        }
+        [data-theme="light"] .modal-title { border-bottom: 1px solid rgba(0,0,0,0.1); color: #b8860b; }
+
+        .modal-meta { 
+            font-family: var(--font-tech); color: var(--gold-neon); margin-bottom: 2rem; 
+            display: flex; gap: 20px; font-size: 0.9rem;
+        }
+        [data-theme="light"] .modal-meta { color: #d35400; }
+
+        .modal-body { 
+            font-size: 1.2rem; line-height: 1.8; color: var(--text-dim); margin-bottom: 3rem; 
+            font-family: var(--font-body);
+        }
         
         .launch-btn {
             display: inline-block; width: 100%; text-align: center;
-            background: var(--gold-main); color: #000; font-family: var(--font-tech);
-            font-size: 1.2rem; font-weight: bold; padding: 15px; letter-spacing: 3px;
-            text-decoration: none; border: 2px solid #fff; transition: 0.3s;
+            background: linear-gradient(45deg, var(--gold-main), #d4a017); 
+            color: #000; font-family: var(--font-tech);
+            font-size: 1.2rem; font-weight: bold; padding: 18px; letter-spacing: 2px;
+            text-decoration: none; border-radius: 4px; transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(238, 187, 77, 0.3);
         }
-        .launch-btn:hover { background: #fff; box-shadow: 0 0 40px var(--gold-glow); }
+        .launch-btn:hover { 
+            background: #fff; color: #000; 
+            box-shadow: 0 0 40px var(--gold-glow); transform: translateY(-2px);
+        }
 
-        /* --- 9. CURSOR & PARTICLES --- */
-        #cursor {
-            width: 30px; height: 30px; border: 1.5px solid var(--gold-neon); 
-            position: fixed; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%);
-            transition: transform 0.1s; mix-blend-mode: exclusion; border-radius: 50%;
-        }
-        /* Sniper Crosshair */
-        #cursor::after {
-            content: ''; position: absolute; top: 50%; left: 50%; width: 4px; height: 4px;
-            background: var(--gold-neon); transform: translate(-50%, -50%); border-radius: 50%;
-        }
-        #cursor.click { transform: translate(-50%, -50%) scale(0.8); background: rgba(255,204,0,0.3); border-color: #fff; }
-        
-        .shockwave {
-            position: fixed; width: 10px; height: 10px; border: 2px solid var(--gold-neon);
-            border-radius: 50%; transform: translate(-50%,-50%); pointer-events: none;
-            animation: wave 0.6s ease-out forwards; z-index: 9998;
-        }
-        @keyframes wave { 100% { width: 500px; height: 500px; opacity: 0; border-width: 0; } }
-
+        /* --- 9. PARTICLES --- */
         #particle-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; transition: opacity 0.5s; }
 
         .loader-box { grid-column: 1/-1; text-align: center; margin-top: 6rem; font-family: var(--font-tech); color: var(--gold-main); letter-spacing: 3px; font-size: 1.2rem; }
@@ -389,7 +396,6 @@
 
     <!-- BACKGROUNDS -->
     <div id="hex-grid"></div>
-    <div id="cursor"></div>
     <canvas id="particle-canvas"></canvas>
     
     <!-- HUD ELEMENTS -->
@@ -411,12 +417,12 @@
                 <span id="m-date">DATE: UNKNOWN</span>
             </div>
             <div class="modal-body" id="m-body">Loading...</div>
-            <a href="#" target="_blank" class="launch-btn" id="m-link">LAUNCH SATELLITE LINK</a>
+            <a href="#" target="_blank" class="launch-btn" id="m-link">READ FULL ARTICLE</a>
         </div>
     </div>
 
     <nav>
-        <div class="brand-box" onmouseenter="expand()" onmouseleave="shrink()">
+        <div class="brand-box">
             <!-- ANIMATED PREMIUM LOGO -->
             <svg class="logo-svg" viewBox="0 0 100 100">
                 <defs>
@@ -437,7 +443,7 @@
             </div>
         </div>
 
-        <!-- COMMAND BAR (Clock Removed) -->
+        <!-- COMMAND BAR -->
         <div class="command-bar">
             <!-- Font Size -->
             <button class="func-btn" onclick="changeFontSize(-1)" title="Decrease Text">A-</button>
@@ -449,7 +455,7 @@
             </button>
 
             <!-- Theme Toggle -->
-            <div class="theme-switch-wrapper" onmouseenter="expand()" onmouseleave="shrink()">
+            <div class="theme-switch-wrapper">
                 <span id="theme-label">NIGHT</span>
                 <label class="theme-switch" for="theme-checkbox">
                     <input type="checkbox" id="theme-checkbox" onchange="toggleTheme()">
@@ -465,7 +471,7 @@
     </div>
 
     <div class="controls">
-        <input type="text" id="searchInput" placeholder="DECRYPT DATABASE // ENTER KEYWORDS..." onmouseenter="expand()" onmouseleave="shrink()">
+        <input type="text" id="searchInput" placeholder="DECRYPT DATABASE // ENTER KEYWORDS..." >
         <div class="tag-container">
             <!-- Magnetic Buttons -->
             <button class="filter-btn active" data-cat="all">GLOBAL INTEL</button>
@@ -507,7 +513,6 @@
                 
                 // Initialize Systems
                 initParticles();
-                initCursor();
                 initMagneticButtons();
                 fetchNews();
                 document.querySelectorAll('.scramble-text').forEach(el => scrambleText(el));
@@ -520,8 +525,6 @@
             document.querySelectorAll('.filter-btn').forEach(b => {
                 b.addEventListener('click', handleFilter);
                 b.addEventListener('click', () => triggerSoundVisual());
-                b.addEventListener('mouseenter', expand);
-                b.addEventListener('mouseleave', shrink);
             });
             document.getElementById('searchInput').addEventListener('keyup', handleSearch);
         };
@@ -599,8 +602,6 @@
             data.forEach((item, i) => {
                 const card = document.createElement('div');
                 card.className = 'card';
-                card.onmouseenter = expand;
-                card.onmouseleave = shrink;
                 
                 // Tilt & Glow Logic
                 card.addEventListener('mousemove', (e) => {
@@ -743,34 +744,6 @@
             });
         }
 
-        // CURSOR
-        function initCursor() {
-            const c = document.getElementById('cursor');
-            window.addEventListener('mousemove', e => {
-                c.style.left = e.clientX + 'px'; c.style.top = e.clientY + 'px';
-            });
-            window.addEventListener('mousedown', (e) => {
-                c.classList.add('click');
-                const w = document.createElement('div');
-                w.className = 'shockwave';
-                w.style.left = e.clientX + 'px'; w.style.top = e.clientY + 'px';
-                document.body.appendChild(w);
-                setTimeout(()=>{ w.remove(); c.classList.remove('click'); }, 600);
-            });
-        }
-        function expand() { 
-            const c = document.getElementById('cursor');
-            c.style.width = "50px"; c.style.height = "50px"; 
-            c.style.background = "rgba(238,187,77,0.15)"; 
-            c.style.borderColor = "#fff";
-        }
-        function shrink() { 
-            const c = document.getElementById('cursor');
-            c.style.width = "30px"; c.style.height = "30px"; 
-            c.style.background = "transparent";
-            c.style.borderColor = "var(--gold-neon)";
-        }
-
         // PARTICLES
         let particleCtx, w, h, particles = [];
         let particleColor = "rgba(200,200,200,0.3)";
@@ -818,4 +791,3 @@
     </script>
 </body>
 </html>
-
