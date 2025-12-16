@@ -32,5 +32,21 @@
 
   { "id": "nato-news", "name": "NATO News", "url": "https://www.nato.int/cps/en/natohq/news.rss", "category": "NATO", "enabled": true },
 
-  { "id": "diplomat-apac", "name": "The Diplomat", "url": "https://thediplomat.com/feed/", "category": "Indo-Pacific", "enabled": true }
+  { "id": "diplomat-apac", "name": "The Diplomat", "url": "https://thediplomat.com/feed/", "category": "Indo-Pacific", "enabled": true },
+
+  { "id": "indian-defense-news", "name": "Indian Defense News", "url": "https://www.indiandefensenews.in/feeds/posts/default", "category": "India Defense", "enabled": true },
+  { "id": "idrw", "name": "IDRW", "url": "https://idrw.org/feed/", "category": "India Defense", "enabled": true },
+  { "id": "defense-news-main", "name": "Defense News (Global)", "url": "https://www.defensenews.com/arc/outboundfeeds/rss/", "category": "General Defense", "enabled": true },
+  { "id": "defence-in", "name": "Defence.in", "url": "https://defence.in/forums/-/index.rss", "category": "India Defense", "enabled": true },
+  { "id": "janes-defence", "name": "Janes Defence News", "url": "https://www.janes.com/feeds/news/defence", "category": "General Defense", "enabled": true },
+  { "id": "defence-watch-india", "name": "Defence Watch", "url": "https://www.defencewatch.in/feed/", "category": "India Defense", "enabled": true },
+  { "id": "swarajya-defence", "name": "Swarajya (Defence)", "url": "https://swarajyamag.com/feeds/section/defence", "category": "India Defense", "enabled": true },
+  { "id": "dd-news-defence", "name": "DD News (Defence)", "url": "https://ddnews.gov.in/en/category/defence/feed/", "category": "India Defense", "enabled": true },
+  { "id": "breaking-defense-main", "name": "Breaking Defense (Main)", "url": "https://breakingdefense.com/feed/", "category": "General Defense", "enabled": true },
+  { "id": "sputnik-india-def", "name": "Sputnik India (Defense)", "url": "https://sputniknews.in/export/rss2/category/defense-news/index.xml", "category": "India Defense", "enabled": true },
+  { "id": "hindu-bl-defence", "name": "Hindu BusinessLine (Defence)", "url": "https://www.thehindubusinessline.com/topic/defence/?widgetName=rss&widgetContentId=topic-defence&action=rss", "category": "India Defense", "enabled": true },
+  { "id": "the-defense-post", "name": "The Defense Post", "url": "https://thedefensepost.com/feed/", "category": "General Defense", "enabled": true },
+  { "id": "uk-defence-journal", "name": "UK Defence Journal", "url": "https://ukdefencejournal.org.uk/feed/", "category": "Europe", "enabled": true },
+  { "id": "defence24", "name": "Defence24", "url": "https://defence24.com/feed", "category": "Europe", "enabled": true },
+  { "id": "reuters-defense", "name": "Reuters (Aerospace & Defense)", "url": "https://news.google.com/rss/search?q=site:reuters.com/business/aerospace-defense&ceid=US:en&hl=en-US&gl=US", "category": "Industry", "enabled": true }
 ]
